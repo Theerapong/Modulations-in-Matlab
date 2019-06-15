@@ -11,21 +11,33 @@
 clear 
 close all
         %-----------------------------------
+        
         %-------- AM in class room ---------
+        
         %-----------by Teacher--------------
+        
         
 samplingRate = 10000;                   % sampling-rate or sampling-frequency  , Fs = 10000
 
+
 %samplingRate = 1000;                   % sampling-rate or sampling-frequency  , Fs = 10000
+
 
 carrierFrequency = 1000;
 
-%t = 0 : 1/samplingRate : 1;           
+
+%t = 0 : 1/samplingRate : 1;   
+
 x1 = zeros(1,21);                   % value 0 
+
 x2 = ones(1,20);                    % value 1 
+
 x3 = 2*x2;                          % value 2 
+
 x4 = 3*x2;                          % value 3  
+
 x5 = zeros(1,20);                   % value 0 
+
 x1(x1==0) = 0    ;
 x2(x2==1) = 0.25 ;
 x3(x3==2) = 0.5  ;
