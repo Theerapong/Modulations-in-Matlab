@@ -15,8 +15,11 @@ close all
         %-----------by Teacher--------------
         
 samplingRate = 10000;                   % sampling-rate or sampling-frequency  , Fs = 10000
+
 %samplingRate = 1000;                   % sampling-rate or sampling-frequency  , Fs = 10000
+
 carrierFrequency = 1000;
+
 %t = 0 : 1/samplingRate : 1;           
 x1 = zeros(1,21);                   % value 0 
 x2 = ones(1,20);                    % value 1 
