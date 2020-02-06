@@ -60,43 +60,25 @@ x5(x5==0) = 0    ;
 newMessage = ["00","01","11","10","01"];
 
 if ( strcmp(newMessage(1),"00") )
-
        newSignal = x1; %0
-       
 elseif ( strcmp(newMessage(1),"01") )
-
        newSignal = x2; %1
-       
 elseif ( strcmp(newMessage(1),"10") )
-
        newSignal = x3; %2
-       
 else  
-
        newSignal = x4; %3
-       
 end
 
 for i=2 : 5
-
    if     ( strcmp(newMessage(i),"00") )
-   
        newSignal = cat(2,newSignal,x5); %0
-       
    elseif ( strcmp(newMessage(i),"01") )
-   
        newSignal = cat(2,newSignal,x2); %1
-       
    elseif ( strcmp(newMessage(i),"10") )
-   
        newSignal = cat(2,newSignal,x3); %2
-       
-   else  
-   
-       newSignal = cat(2,newSignal,x4); %3 
-       
+   else
+       newSignal = cat(2,newSignal,x4); %3
    end
-   
 end
 
 subplot(7,2,1); plot(newSignal,'g');  title('New Message');  ylabel('(Amplitude)');
