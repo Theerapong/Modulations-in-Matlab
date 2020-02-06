@@ -70,40 +70,76 @@ for i=2 : 5
    end
 end
 subplot(7,2,1); plot(newSignal,'g');  title('New Message');  ylabel('(Amplitude)');
+
         %-----------------------------------
+        
         %---------------- AM ---------------
+        
         %-----------------------------------
+        
 newAM = modulate(newSignal,carrierFrequency,samplingRate,'AM'); 
+
 subplot(7,2,3); plot(newAM,'b'); title('AM');
+
 demodAM = demod(newAM,carrierFrequency,samplingRate,'AM'); 
+
 subplot(7,2,5); plot(demodAM,'b'); title('AM Demodulation');
+
+
+
         %-----------------------------------
+        
         %----------------- PM --------------
+        
         %-----------------------------------
+        
 newPM = modulate(newSignal,carrierFrequency,samplingRate,'PM'); 
+
 subplot(7,2,4); plot(newPM,'b'); title('PM');
+
+      
       
 demodPM = demod(newPM,carrierFrequency,samplingRate,'PM'); 
+
 subplot(7,2,6); plot(demodPM,'b'); title('PM Demodulation');
+
        
         %-----------------------------------
+        
         %--------------- PPM ---------------
+        
         %-----Pulse-position modulation-----
         
+        
 modPPM = modulate(newSignal,carrierFrequency,samplingRate,'ppm');
+
 subplot(7,2,7); plot(modPPM,'r');title("PPM");
+
 demodPPM=demod(modPPM,carrierFrequency,samplingRate,'ppm');
+
 subplot(7,2,9); plot(demodPPM,'r');title("PPM Demodulation");
+
         %-----------------------------------
+        
         %---------- PWM Modulation----------
+        
         %-------Pulse-width modulation------
         
+        
 modPWM = modulate(newSignal,carrierFrequency,samplingRate,'pwm','centered') ;
+
 subplot(7,2,8);  plot(modPWM,'r');    title('PWM');
+
 demodPWM = demod(modPWM,carrierFrequency,samplingRate,'pwm','centered') ;
+
 subplot(7,2,10);  plot(demodPWM,'r');    title('PWM Demodulation');
+
+
+
         %-----------------------------------
+        
         %---------- QAM Modulation ---------
+        
         %-Quadrature amplitude modulation---
         
         
