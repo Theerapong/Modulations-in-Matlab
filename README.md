@@ -9,7 +9,9 @@
 
 
 clear 
+
 close all
+
         %-----------------------------------
         
         %-------- AM in class room ---------
@@ -19,12 +21,9 @@ close all
         
 samplingRate = 10000;                   % sampling-rate or sampling-frequency  , Fs = 10000
 
-
 %samplingRate = 1000;                   % sampling-rate or sampling-frequency  , Fs = 10000
 
-
 carrierFrequency = 1000;
-
 
 %t = 0 : 1/samplingRate : 1;   
 
@@ -39,37 +38,69 @@ x4 = 3*x2;                          % value 3
 x5 = zeros(1,20);                   % value 0 
 
 x1(x1==0) = 0    ;
+
 x2(x2==1) = 0.25 ;
+
 x3(x3==2) = 0.5  ;
+
 x4(x4==3) = 0.75 ;
+
 x5(x5==0) = 0    ;
+
         %-----------------------------------
+        
         %--------- New Application ---------
+        
         %-----by Theerapong Kulawong--------
+        
 %newMessage = ["00","01","10","11","00"];
+
 %newMessage = ["00","01","10","10","11"];
+
 newMessage = ["00","01","11","10","01"];
+
 if ( strcmp(newMessage(1),"00") )
+
        newSignal = x1; %0
+       
 elseif ( strcmp(newMessage(1),"01") )
+
        newSignal = x2; %1
+       
 elseif ( strcmp(newMessage(1),"10") )
+
        newSignal = x3; %2
+       
 else  
+
        newSignal = x4; %3
+       
 end
+
 for i=2 : 5
+
    if     ( strcmp(newMessage(i),"00") )
+   
        newSignal = cat(2,newSignal,x5); %0
+       
    elseif ( strcmp(newMessage(i),"01") )
+   
        newSignal = cat(2,newSignal,x2); %1
+       
    elseif ( strcmp(newMessage(i),"10") )
+   
        newSignal = cat(2,newSignal,x3); %2
+       
    else  
+   
        newSignal = cat(2,newSignal,x4); %3 
+       
    end
+   
 end
+
 subplot(7,2,1); plot(newSignal,'g');  title('New Message');  ylabel('(Amplitude)');
+
 
         %-----------------------------------
         
