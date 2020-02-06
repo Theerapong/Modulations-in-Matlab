@@ -106,10 +106,15 @@ subplot(7,2,10);  plot(demodPWM,'r');    title('PWM Demodulation');
         %---------- QAM Modulation ---------
         %-Quadrature amplitude modulation---
         
+        
 newQAM = modulate(newSignal,carrierFrequency,samplingRate,'qam',newSignal); 
+
 subplot(7,2,11); plot(newQAM); title('QAM');
+
 demodQAM = demod(newQAM,carrierFrequency,samplingRate,'qam',newSignal); 
+
 subplot(7,2,13); plot(demodQAM); title('QAM Demodulation');
+
 xlabel('(Time)');
 
 
