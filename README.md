@@ -1,6 +1,6 @@
 *(This project was a part of studying at Kingston University, London)*
 
-# Modulations on Matlab R2019a (here is source code)
+# Modulations on Matlab R2019a (here is source code as well)
 %%% Modulations on Matlab .....
 
 %% Made on March 2019 .....
